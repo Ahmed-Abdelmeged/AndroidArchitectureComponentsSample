@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="add_contact_title">Add Contact</string>
+    <string name="edit_contact_title">Edit Contact</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_phone_number">Phone number</string>
+    <string name="enter_valid_name">Enter a valid name</string>
+    <string name="enter_valid_phone_number">Enter a valid phone number</string>
+</resources>
