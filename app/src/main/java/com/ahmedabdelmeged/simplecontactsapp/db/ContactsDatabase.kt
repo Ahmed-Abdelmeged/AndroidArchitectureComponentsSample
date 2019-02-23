@@ -6,17 +6,17 @@ import com.ahmedabdelmeged.simplecontactsapp.util.SingletonHolder
 
 @Database(entities = [Contact::class], version = 1)
 @TypeConverters(DateConverter::class)
-abstract class AppDatabase : RoomDatabase() {
+abstract class ContactsDatabase : RoomDatabase() {
 
     abstract fun contactsDao(): ContactsDao
 
     /**
-     * Initialize [AppDatabase] lazily as singleton to use on demand. For a production
+     * Initialize [ContactsDatabase] lazily as singleton to use on demand. For a production
      * app we might use dependency injection to inject the database to where we want to use it.
      */
-    companion object : SingletonHolder<AppDatabase, Context>({
+    companion object : SingletonHolder<ContactsDatabase, Context>({
         Room.databaseBuilder(it.applicationContext,
-                AppDatabase::class.java, "contacts.db")
+                ContactsDatabase::class.java, "contacts.db")
                 .build()
     })
 

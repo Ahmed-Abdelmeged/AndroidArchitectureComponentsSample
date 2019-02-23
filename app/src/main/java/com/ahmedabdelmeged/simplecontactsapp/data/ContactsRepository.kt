@@ -2,16 +2,16 @@ package com.ahmedabdelmeged.simplecontactsapp.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.ahmedabdelmeged.simplecontactsapp.db.AppDatabase
+import com.ahmedabdelmeged.simplecontactsapp.db.ContactsDatabase
 import com.ahmedabdelmeged.simplecontactsapp.db.Contact
 import java.lang.Exception
 import java.util.concurrent.Executors
 
 /**
- * Repository to interact with [AppDatabase] to provide a clean
+ * Repository to interact with [ContactsDatabase] to provide a clean
  * methods to the rest of the app and hide the IO complexity.
  */
-class ContactsRepository(private val db: AppDatabase) {
+class ContactsRepository(private val db: ContactsDatabase) {
 
     /**
      * Executor to do database operations and background thread to avoid locking the main thread.

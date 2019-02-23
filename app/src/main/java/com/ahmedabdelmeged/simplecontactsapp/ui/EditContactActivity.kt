@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.ahmedabdelmeged.simplecontactsapp.R
 import com.ahmedabdelmeged.simplecontactsapp.data.ContactsRepository
-import com.ahmedabdelmeged.simplecontactsapp.db.AppDatabase
+import com.ahmedabdelmeged.simplecontactsapp.db.ContactsDatabase
 import com.ahmedabdelmeged.simplecontactsapp.db.Contact
 import com.ahmedabdelmeged.simplecontactsapp.viewmodel.EditContactViewModel
 import com.ahmedabdelmeged.simplecontactsapp.viewmodel.EditContactViewModelFactory
@@ -34,7 +34,7 @@ class EditContactActivity : AppCompatActivity() {
         setupViewWithContact(contact)
 
         //Setup ViewModel
-        val db = AppDatabase.getInstance(applicationContext)
+        val db = ContactsDatabase.getInstance(applicationContext)
         val factory = EditContactViewModelFactory(ContactsRepository(db), contact)
         viewModel = ViewModelProviders.of(this, factory).get(EditContactViewModel::class.java)
 

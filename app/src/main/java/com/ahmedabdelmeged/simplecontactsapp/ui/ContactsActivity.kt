@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmedabdelmeged.simplecontactsapp.data.ContactsRepository
-import com.ahmedabdelmeged.simplecontactsapp.db.AppDatabase
+import com.ahmedabdelmeged.simplecontactsapp.db.ContactsDatabase
 import com.ahmedabdelmeged.simplecontactsapp.viewmodel.ContactsViewModel
 import com.ahmedabdelmeged.simplecontactsapp.viewmodel.ContactsViewModelFactory
 import kotlinx.android.synthetic.main.activity_contacts.*
@@ -29,7 +29,7 @@ class ContactsActivity : AppCompatActivity() {
         recycler.adapter = adapter
 
         //Setup ViewModel
-        val db = AppDatabase.getInstance(applicationContext)
+        val db = ContactsDatabase.getInstance(applicationContext)
         val factory = ContactsViewModelFactory(ContactsRepository(db))
         val viewModel = ViewModelProviders.of(this, factory).get(ContactsViewModel::class.java)
         viewModel.contactsLiveData.observe(this, Observer {
